@@ -19,18 +19,15 @@ package screen;
 
 import asciiPanel.AsciiPanel;
 
-import javax.swing.*;
-
 /**
  *
  * @author Aeranythe Echosong
  */
-public class StartScreen extends RestartScreen {
+public class LoseScreen extends RestartScreen {
 
     @Override
     public Screen displayOutput(AsciiPanel terminal) {
-        terminal.write("This is the start screen.", 0, 0);
-        terminal.write("Press ENTER to continue...", 0, 1);
+        terminal.write("You lost! Press enter to try again.", 0, 0);
         return this;
     }
 

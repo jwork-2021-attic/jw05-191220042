@@ -1,8 +1,10 @@
 package world;
 
 import java.awt.*;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 /*
  * Copyright (C) 2015 Aeranythe Echosong
@@ -32,14 +34,23 @@ public class World {
     private int width;
     private int height;
     private List<Creature> creatures;
+    private boolean[][] map;
 
-    public static final int TILE_TYPES = 2;
+
+    public final static int TILE_TYPES=5;
 
     public World(Tile[][] tiles) {
         this.tiles = tiles;
         this.width = tiles.length;
         this.height = tiles[0].length;
         this.creatures = new ArrayList<>();
+        map=new boolean[width][height];
+        for (int i=0; i<width; i++)
+            for (int j=0; j<height; j++){
+                map[i][j]=false;
+            }
+
+
     }
 
     public Tile tile(int x, int y) {
@@ -48,6 +59,11 @@ public class World {
         } else {
             return tiles[x][y];
         }
+    }
+
+    public void change(int x, int y) {
+        if(this.tile(x,y)==Tile.WALL)
+            this.tiles[x][y]=Tile.FLOOR;
     }
 
     public char glyph(int x, int y) {

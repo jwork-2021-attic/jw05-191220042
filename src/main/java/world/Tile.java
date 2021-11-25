@@ -31,6 +31,10 @@ public enum Tile {
 
     WALL((char) 177, AsciiPanel.brightBlack),
 
+    VISION((char)15,AsciiPanel.magenta),
+
+    BLOOD((char)3,AsciiPanel.magenta),
+
     BOUNDS('x', AsciiPanel.magenta);
 
     private char glyph;
@@ -50,11 +54,13 @@ public enum Tile {
     }
 
     public boolean isGround() {
-        return this != Tile.WALL && this != Tile.BOUNDS;
+        return this != Tile.WALL && this != Tile.BOUNDS ;
     }
 
     Tile(char glyph, Color color) {
         this.glyph = glyph;
         this.color = color;
     }
+
+
 }

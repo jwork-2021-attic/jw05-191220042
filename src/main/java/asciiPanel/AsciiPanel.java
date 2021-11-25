@@ -1,5 +1,7 @@
 package asciiPanel;
 
+
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -11,7 +13,7 @@ import java.io.IOException;
 import java.lang.reflect.Field;
 
 import javax.imageio.ImageIO;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 /**
  * This simulates a code page 437 ASCII terminal display.
@@ -386,12 +388,10 @@ public class AsciiPanel extends JPanel {
         g.drawImage(offscreenBuffer, 0, 0, this);
     }
 
+
     private void loadGlyphs() {
         try {
-            System.out.println(terminalFontFile);
-            System.out.println(AsciiPanel.class.getClassLoader().getResource(terminalFontFile));
             glyphSprite = ImageIO.read(AsciiPanel.class.getClassLoader().getResource(terminalFontFile));
-
         } catch (IOException e) {
             System.err.println("loadGlyphs(): " + e.getMessage());
         }

@@ -1,5 +1,9 @@
 package world;
 
+import maze.MazeGenerator;
+
+import java.io.IOException;
+import java.util.Properties;
 import java.util.Random;
 
 /*
@@ -29,10 +33,16 @@ public class WorldBuilder {
     private int width;
     private int height;
     private Tile[][] tiles;
+    private int[][] map;
 
     public WorldBuilder(int width, int height) {
         this.width = width;
         this.height = height;
+
+        MazeGenerator myMaze = new MazeGenerator(this.width);
+        myMaze.generateMaze();
+        map=myMaze.getMaze();
+
         this.tiles = new Tile[width][height];
     }
 
@@ -43,15 +53,30 @@ public class WorldBuilder {
     private WorldBuilder randomizeTiles() {
         for (int width = 0; width < this.width; width++) {
             for (int height = 0; height < this.height; height++) {
-                Random rand = new Random();
-                switch (rand.nextInt(World.TILE_TYPES)) {
-                    case 0:
-                        tiles[width][height] = Tile.FLOOR;
-                        break;
-                    case 1:
-                        tiles[width][height] = Tile.WALL;
-                        break;
-                }
+//                Random rand = new Random();
+//                switch (rand.nextInt(World.TILE_TYPES)) {
+//                    case 0:
+//                        tiles[width][height] = Tile.FLOOR;
+//                        break;
+//                    case 1:
+//                        tiles[width][height] = Tile.WALL;
+//                        break;
+//                    case 2:
+//                        tiles[width][height] = Tile.WALL;
+//                        break;
+//                    case 3:
+//                        tiles[width][height] = Tile.WALL;
+//                        break;
+//                    case 4:
+//                        tiles[width][height] = Tile.FLOOR;
+//                        break;
+//                  }
+                if(map[width][height]==1)
+                    tiles[width][height] = Tile.FLOOR;
+                else
+                    tiles[width][height] = Tile.WALL;
+
+
             }
         }
         return this;
@@ -91,6 +116,26 @@ public class WorldBuilder {
             }
         }
         tiles = newtemp;
+
+        for (int i=0;i<height;i++)
+            tiles[width-1][i] = Tile.BOUNDS;
+        for (int i=0;i<width;i++)
+            tiles[i][height-1] = Tile.BOUNDS;
+
+
+        Random rand = new Random();
+        for(int i=0;i<10;i++) {
+            int x=rand.nextInt(width);
+            int y=rand.nextInt(height);
+            tiles[x][y]=Tile.VISION;
+        }
+
+        for(int i=0;i<10;i++) {
+            int x=rand.nextInt(width);
+            int y=rand.nextInt(height);
+            tiles[x][y]=Tile.BLOOD;
+        }
+
         return this;
     }
 

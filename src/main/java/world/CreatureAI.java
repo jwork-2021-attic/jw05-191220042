@@ -23,7 +23,7 @@ import java.awt.*;
  *
  * @author Aeranythe Echosong
  */
-class CreatureAI {
+class CreatureAI implements Runnable{
 
     protected Creature creature;
 
@@ -54,4 +54,6 @@ class CreatureAI {
         }
         return true;
     }
+    @Override
+    public void run(){}
 }
