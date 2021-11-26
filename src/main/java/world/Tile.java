@@ -33,7 +33,7 @@ public enum Tile {
 
     VISION((char)15,AsciiPanel.magenta),
 
-    BLOOD((char)3,AsciiPanel.magenta),
+    BLOOD((char)3,AsciiPanel.blue),
 
     BOUNDS('x', AsciiPanel.magenta);
 
