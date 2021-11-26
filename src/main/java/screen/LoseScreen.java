@@ -1,8 +1,3 @@
-package world;
-
-import asciiPanel.AsciiPanel;
-
-import java.awt.*;
 /*
  * Copyright (C) 2015 Aeranythe Echosong
  *
@@ -20,47 +15,20 @@ import java.awt.*;
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
+package screen;
+
+import asciiPanel.AsciiPanel;
 
 /**
  *
  * @author Aeranythe Echosong
  */
-public enum Tile {
+public class LoseScreen extends RestartScreen {
 
-    FLOOR((char) 250, AsciiPanel.green),
-
-    WALL((char) 177, AsciiPanel.brightBlack),
-
-    VISION((char)15,AsciiPanel.magenta),
-
-    BLOOD((char)3,AsciiPanel.blue),
-
-    BOUNDS('x', AsciiPanel.magenta);
-
-    private char glyph;
-
-    public char glyph() {
-        return glyph;
+    @Override
+    public Screen displayOutput(AsciiPanel terminal) {
+        terminal.write("You lost! Press enter to try again.", 0, 0);
+        return this;
     }
-
-    private Color color;
-
-    public Color color() {
-        return color;
-    }
-
-    public boolean isDiggable() {
-        return this != Tile.WALL;
-    }
-
-    public boolean isGround() {
-        return this != Tile.WALL && this != Tile.BOUNDS ;
-    }
-
-    Tile(char glyph, Color color) {
-        this.glyph = glyph;
-        this.color = color;
-    }
-
 
 }

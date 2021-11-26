@@ -4,7 +4,57 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4b519aa-9377-419f-8df3-56e19e660547" name="Changes" comment="。。" />
+    <list default="true" id="a4b519aa-9377-419f-8df3-56e19e660547" name="Changes" comment="ready merge">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/maze/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/maze/MazeGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/maze/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/screen/LoseScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/world/MonsterAI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/world/PlayerE.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ApplicationMain.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/asciiPanel/AsciiCharacterData.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/asciiPanel/AsciiFont.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/asciiPanel/AsciiPanel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/asciiPanel/TileTransformer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/maze/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/maze/MazeGenerator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/maze/Node.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/screen/LoseScreen.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/screen/PlayScreen.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/screen/RestartScreen.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/screen/Screen.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/screen/StartScreen.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/world/Creature.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/world/CreatureAI.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/world/CreatureFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/world/FungusAI.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/world/Line.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/world/MonsterAI.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/world/PlayerAI.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/world/PlayerE.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/world/Tile.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/world/World.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/world/WorldBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jw05-191220042.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ApplicationMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ApplicationMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/asciiPanel/AsciiPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/asciiPanel/AsciiPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/screen/PlayScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screen/PlayScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/screen/RestartScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screen/RestartScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/screen/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screen/Screen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/screen/StartScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screen/StartScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/world/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/world/Creature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/world/CreatureAI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/world/CreatureAI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/world/CreatureFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/world/CreatureFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/world/PlayerAI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/world/PlayerAI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/world/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/world/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/world/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/world/World.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/world/WorldBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/world/WorldBuilder.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,8 +132,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.ApplicationMain" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.ApplicationMain" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
@@ -111,7 +161,7 @@
       <workItem from="1637903329462" duration="184000" />
       <workItem from="1637903813134" duration="1303000" />
       <workItem from="1637905571296" duration="72000" />
-      <workItem from="1637906313707" duration="400000" />
+      <workItem from="1637906313707" duration="1109000" />
     </task>
     <task id="LOCAL-00001" summary="。">
       <created>1637897776307</created>
@@ -127,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637902327928</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="ready merge">
+      <created>1637907012184</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1637907012184</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,6 +217,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="。" />
     <MESSAGE value="。。" />
-    <option name="LAST_COMMIT_MESSAGE" value="。。" />
+    <MESSAGE value="ready merge" />
+    <MESSAGE value="reback" />
+    <option name="LAST_COMMIT_MESSAGE" value="reback" />
   </component>
 </project>

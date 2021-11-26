@@ -25,7 +25,19 @@ import java.awt.*;
  */
 public class Creature {
 
+    public World getWorld() {
+        return world;
+    }
+
     private World world;
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
 
     private int x;
 
@@ -65,10 +77,16 @@ public class Creature {
         this.ai = ai;
     }
 
+    public CreatureAI getAI() { return this.ai; }
+
     private int maxHP;
 
     public int maxHP() {
         return this.maxHP;
+    }
+
+    public void setHp(int hp) {
+        this.hp = hp;
     }
 
     private int hp;
@@ -85,6 +103,7 @@ public class Creature {
         }
     }
 
+
     private int attackValue;
 
     public int attackValue() {
@@ -95,6 +114,10 @@ public class Creature {
 
     public int defenseValue() {
         return this.defenseValue;
+    }
+
+    public void setVisionRadius(int visionRadius) {
+        this.visionRadius = visionRadius;
     }
 
     private int visionRadius;
@@ -116,23 +139,48 @@ public class Creature {
     }
 
     public void moveBy(int mx, int my) {
-        Creature other = world.creature(x + mx, y + my);
+        synchronized(this.world) {
+            if (!world.tile(x + mx, y + my).isGround())
+                return;
+            else {
+                Creature other = world.creature(x + mx, y + my);
 
-        if (other == null) {
-            ai.onEnter(x + mx, y + my, world.tile(x + mx, y + my));
-        } else {
-            attack(other);
+                if (other == null) {
+                    ai.onEnter(x + mx, y + my, world.tile(x + mx, y + my));
+                } else {
+                    attack(other);
+                }
+            }
+        }
+    }
+
+    public void moveWall(int mx, int my) {
+        synchronized(this.world) {
+            if (!world.tile(x + mx, y + my).isGround()){
+                world.change(x + mx, y + my);
+            }
+
+            Creature other = world.creature(x + mx, y + my);
+
+            if (other == null) {
+                ai.onEnter(x + mx, y + my, world.tile(x + mx, y + my));
+            } else {
+                attack(other);
+            }
+
         }
     }
 
     public void attack(Creature other) {
-        int damage = Math.max(0, this.attackValue() - other.defenseValue());
-        damage = (int) (Math.random() * damage) + 1;
+        synchronized(other){
+            int damage = Math.max(0, this.attackValue() - other.defenseValue());
+            damage = (int) (Math.random() * damage) + 1;
 
-        other.modifyHP(-damage);
+            other.modifyHP(-damage);
 
-        this.notify("You attack the '%s' for %d damage.", other.glyph, damage);
-        other.notify("The '%s' attacks you for %d damage.", glyph, damage);
+            this.notify("You attack the '%s' for %d damage.", other.glyph, damage);
+            other.notify("The '%s' attacks you for %d damage.", glyph, damage);
+        }
     }
 
     public void update() {

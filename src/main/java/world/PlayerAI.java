@@ -26,22 +26,45 @@ import java.util.List;
 public class PlayerAI extends CreatureAI {
 
     private List<String> messages;
+    private CreatureFactory factory;
+    public Creature myE=null;
+    public int cd=0;
+    public int visionCd=0;
 
-    public PlayerAI(Creature creature, List<String> messages) {
+    public PlayerAI(Creature creature, List<String> messages, CreatureFactory factory) {
         super(creature);
         this.messages = messages;
+        this.factory=factory;
     }
 
     public void onEnter(int x, int y, Tile tile) {
         if (tile.isGround()) {
+            if (tile.isDiggable()) {
+                if(tile==Tile.VISION) {
+                    visionCd=100;
+                    this.creature.setVisionRadius(10);
+                }
+                else if(tile==Tile.BLOOD && creature.maxHP()> creature.hp()) {
+                    this.creature.setHp(creature.hp()+1);
+                }
+                creature.dig(x, y);
+            }
             creature.setX(x);
             creature.setY(y);
-        } else if (tile.isDiggable()) {
-            creature.dig(x, y);
         }
     }
 
-    public void onNotify(String message) {
-        this.messages.add(message);
+    public void E(){
+        if(cd==100) {
+            Creature creature = this.factory.newPlayerE(this);
+            myE = creature;
+            Thread attack = new Thread(creature.getAI());
+            attack.start();
+            cd=0;
+        }
     }
+
+//    public void onNotify(String message) {
+//        this.messages.add(message);
+//    }
 }
